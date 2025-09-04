@@ -1,20 +1,14 @@
-const arrOfUsers:  {
-      username : string
-      email : string
-      gender: string
+import { UserService } from "../../services/UserSerice.js";
+import type { User } from "../../types/userType.js";
 
-    }[] = []  ;
 
 export const mutation_resolver = {
     Mutation: {
-                createUser:function(_:any,{username,email,gender}: {
-          username : string
-          email : string
-          gender: string
-    
-        }) {
-        arrOfUsers.push({username,email,gender}) ; 
-        return arrOfUsers ;
-        }
+             createUser:async  (_:any ,user:User):Promise<string> =>
+             {
+             return await UserService.createUser(user) ; 
+            
+             }  
+
             }
 }

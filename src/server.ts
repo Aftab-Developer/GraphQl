@@ -19,15 +19,14 @@ await apolloServer.start();
 
  app.use("/graphql",expressMiddleware(apolloServer, {
     context: async ({req}:{req:Request}) => ({
-
-      /* 
-      Todo we will do that later ....
-       01 .extract the autorization header 
-       02 .extract the token fron Bearer 
-       03 .verify the token get payload 
-       04 .return the payload info  
-       05 .check the user is already here using context in the resolvers
-      */
+    //  first  
+    /*  
+      we should check the headers -> Authorization -> Bearer Token
+      extract token 
+    
+    
+    */
+      
     }),
   }));
 
